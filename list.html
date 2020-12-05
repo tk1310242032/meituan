@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			
+			.main-product1
+			{background: #f8f8f8;width: 1170px;position: absolute;left: 20%;top: 20%;}
+			.layui-container
+			{width:1170px}
+			.rollBox
+			{width:1170px;overflow:hidden;}
+			.rollBox .leftBottom
+			{height: 20px;width: 20px;overflow: hidden;float: left;left: 15px;display: none;margin: 100px 0 0 0;position: absolute;cursor: pointer;text-align: center;background: #afa4a4;border-radius: 20px;}
+			.rollBox .rightBottom
+			{right: 0;
+			display: none;height: 20px;
+			width: 20px;
+			overflow: hidden;float: right;
+			right: 15px;margin: 100px 0 0 0;
+			position: absolute;
+			cursor: pointer;
+			text-align: center;background: #afa4a4;
+			border-radius: 20px;}
+			.rollBox:hover .leftBottom
+			{display: block}
+			
+			.rollBox:hover .rightBottom
+			{display: block;}
+			
+			.rollBox .cont
+			{width:1170px;
+			overflow:hidden;
+			float:left;}
+			
+			.rollBox .srcCont
+			{width:10000000px;}
+			
+			.rollBox .cont .pic
+			{width:390px;float:left;text-align:center;}
+			
+			
+			.rollBox .cont .pic img{width:390px;
+			padding: 0 1px;background:#fff;
+			display:block;margin:0 auto;}
+			.rollBox .cont .pic p{line-height:26px;color:#505050;}
+			
+			
+			.rollBox .cont a:link,.rollBox .cont a:visited{color:#626466;text-decoration:none;}
+			
+			
+			.rollBox .cont a:hover{color:#f00;text-decoration:underline;}
+			
+			.rollBox #listImg1,.rollBox #listImg2{float:left;}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="main-product1 clearBoth">
+		        <div class="layui-container">
+		            <!-- 轮播图 -->
+		            <div class="overflowHidden gameBanner">
+		                <div class="footerBoxSecond">
+		                    <div class="rollBox">
+		                        <div class="leftBottom" onmousedown="isGoUp()" onmouseup="isStopUp()" onmouseout="isStopUp()"><b><</b></div>
+		                        <div class="cont" id="isCont">
+		                            <div class="srcCont">
+		                                <div id="listImg1">
+		                                    <!-- 图片列表 begin -->
+		                                    <div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731840(1).png" width="390"></a>
+		                                    </div>
+		                                    <div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731877(1).png" width="390"></a>
+		                                    </div>
+		                                    <div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731840(1).png" width="390"></a>
+		                                    </div>
+		                                    <div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731877(1).png" width="390"></a>
+		                                    </div>
+		                                    <div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731840(1).png" width="390"></a>
+		                                    </div>
+											<div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731877(1).png" width="390"></a>
+		                                    </div>
+											<div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731840(1).png" width="390"></a>
+		                                    </div>
+											<div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731877(1).png" width="390"></a>
+		                                    </div>
+		                                    <!-- 图片列表 end -->
+		                                </div>
+		                                <div id="listImg2">
+		                                    <!-- 图片列表 begin -->
+		                                    <div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731877(1).png" width="390"></a>
+		                                    </div>
+		                                    <div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731840(1).png" width="390"></a>
+		                                    </div>
+		                                    <div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731840(1).png" width="390"></a>
+		                                    </div>
+		                                    <div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731840(1).png" width="390"></a>
+		                                    </div>
+		                                    <div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731877(1).png" width="390"></a>
+		                                    </div>
+											<div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731877(1).png" width="390"></a>
+		                                    </div>
+											<div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731877(1).png" width="390"></a>
+		                                    </div>
+											<div class="pic">
+		                                        <a href="#" target="_self"><img src="img/1604731877(1).png" width="390"></a>
+		                                    </div>
+		                                    <!-- 图片列表 end -->
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="rightBottom" onmousedown="isGoDown()" onmouseup="isStopDown()" onmouseout="isStopDown()"><b>></b></div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		                       var speed = 1; //速度(毫秒)
+		                        var space = 5; //每次移动(px)
+		                        var pageWidth = 390; //翻页宽度
+		                        var fill = 0; //整体移位
+		                        var moveLock = false;
+		                        var moveTimeObj;
+		                        var comp = 0;
+		                        var AutoPlayObj = null;
+		                        getObj("listImg2").innerHTML = getObj("listImg1").innerHTML;
+		                        getObj('isCont').scrollLeft = fill;
+		                        getObj("isCont").onmouseover = function(){
+		                            clearInterval(AutoPlayObj);
+		                        }
+		                        getObj("isCont").onmouseout = function(){
+		                            autoPlay();
+		                        }
+		                        autoPlay();
+		                        function getObj(objName){
+		                            if(document.getElementById){
+		                                return eval('document.getElementById("'+objName+'")'
+		                                )
+		                            } else{
+		                                return eval('document.all.'+objName)
+		                            }
+		                        }
+		                        function autoPlay(){ //自动滚动
+		                            clearInterval(AutoPlayObj);
+		                            AutoPlayObj = setInterval('isGoDown();isStopDown();',3000); //间隔时间
+		                        }
+		                        function isGoUp(){ //上翻开始
+		                            if(moveLock) return;
+		                            clearInterval(AutoPlayObj);
+		                            moveLock = true;
+		                            moveTimeObj = setInterval('isSrcUp();',speed);
+		                        }
+		                        function isStopUp(){ //上翻停止
+		                            clearInterval(moveTimeObj);
+		                            if(getObj('isCont').scrollLeft % pageWidth - fill != 0){
+		                                comp = fill - (getObj('isCont').scrollLeft % pageWidth);
+		                                compSrc();
+		                            }else{
+		                                moveLock = false;
+		                            }
+		                            autoPlay();
+		                        }
+		                        function isSrcUp(){ //上翻动作
+		                            if(getObj('isCont').scrollLeft <= 0){getObj('isCont').scrollLeft = getObj('isCont').scrollLeft + getObj('listImg1').offsetWidth}
+		                            getObj('isCont').scrollLeft -= space ;
+		                        }
+		                        function isGoDown(){ //下翻
+		                            clearInterval(moveTimeObj);
+		                            if(moveLock) return;
+		                            clearInterval(AutoPlayObj);
+		                            moveLock = true;
+		                            isSrcDown();
+		                            moveTimeObj = setInterval('isSrcDown()',speed);
+		                        }
+		                        function isStopDown(){ //下翻停止
+		                            clearInterval(moveTimeObj);
+		                            if(getObj('isCont').scrollLeft % pageWidth - fill != 0 ){
+		                                comp = pageWidth - getObj('isCont').scrollLeft % pageWidth + fill;
+		                                compSrc();
+		                            }else{
+		                                moveLock = false;
+		                            }
+		                            autoPlay();
+		                        }
+		                        function isSrcDown(){ //下翻动作
+		                            if(getObj('isCont').scrollLeft >= getObj('listImg1').scrollWidth){getObj('isCont').scrollLeft = getObj('isCont').scrollLeft - getObj('listImg1').scrollWidth;}
+		                            getObj('isCont').scrollLeft += space ;
+		                        }
+		                        function compSrc(){
+		                            var num;
+		                            if(comp == 0){
+		                                moveLock = false;return;
+		                            }
+		                            if(comp < 0){ //上翻
+		                                if(comp < -space){
+		                                    comp += space;
+		                                    num = space;
+		                                }else{
+		                                    num = -comp;
+		                                    comp = 0;
+		                                }
+		                                getObj('isCont').scrollLeft -= num;
+		                                setTimeout('compSrc()',speed);
+		                            }else{ //下翻
+		                                if(comp > space){
+		                                    comp -= space;
+		                                    num = space;
+		                                }else{
+		                                    num = comp;
+		                                    comp = 0;
+		                                }
+		                                getObj('isCont').scrollLeft += num;
+		                                setTimeout('compSrc()',speed);
+		                            }
+		                        }
+
+	</script>
+</html>
